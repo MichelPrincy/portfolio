@@ -160,10 +160,8 @@ export const AboutMe = () => {
 						besoins complexes en solutions innovantes.
 					</p>
 					<p>
-						Ma polyvalence couvre des technologies allant de{' '}
-						<strong>NodeJS et React</strong> à <strong>Java et Python</strong>,
-						avec une solide expertise en bases de données SQL.
-					</p>
+    Ma maîtrise des environnements <strong>Full-stack</strong> et ma capacité d'adaptation me permettent de concevoir des solutions logicielles complètes, de l'expérience utilisateur jusqu'à l'optimisation des architectures de données.
+</p>
 				</div>
 				<div>
 					{timeline.map(({ items, title }, idx) => (
