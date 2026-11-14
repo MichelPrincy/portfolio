@@ -37,7 +37,7 @@ Les fenêtres de détail utilisent le dialogue natif du navigateur : navigation 
 
 Les onze réalisations sont visibles : quatre présentations immersives et sept cartes détaillées, accessibles directement depuis le lien « Voir les 7 autres réalisations ». Chaque projet dispose de son contexte, de son rôle, de ses fonctionnalités et de ses technologies dans une fenêtre de détail. Les informations ont été complétées à partir du CV fourni ; le projet de dépenses communales déjà présent est conservé.
 
-La palette bleu ciel s’accorde à la veste de la nouvelle photo. `public/images/michel-princy-hero.png` est une copie de l’image fournie, avec sa transparence intacte. L’affichage contient le portrait et l’ordinateur sans recadrage de l’image. Les couleurs clair/sombre utilisent les variables `--accent`, `--highlight`, `--paper`, `--surface` et `--muted` ; le favicon et la couleur du navigateur suivent aussi cette identité.
+La palette bleu ciel s’accorde à la veste de la nouvelle photo. `public/images/michel-princy-hero.png` est une copie de l’image fournie, avec sa transparence intacte. Le portrait agrandi s’intègre directement au fond du site, sans cadre, fond coloré ni monogramme. La mention du Master accompagne le texte et ne recouvre pas la photo. Sur tablette et téléphone, le portrait apparaît sous le texte et s’adapte à la largeur disponible. L’affichage contient le portrait et l’ordinateur sans recadrage de l’image. Les couleurs clair/sombre utilisent les variables `--accent`, `--highlight`, `--paper`, `--surface` et `--muted` ; le favicon et la couleur du navigateur suivent aussi cette identité.
 
 ## Défilement immersif
 

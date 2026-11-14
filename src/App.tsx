@@ -409,11 +409,18 @@ function App() {
 								LinkedIn <FiArrowUpRight />
 							</a>
 						</div>
+						<div className='degree-note'>
+							<span className='degree-icon'>
+								<FiCheck aria-hidden='true' />
+							</span>
+							<span>
+								<strong>Master professionnel en Informatique</strong>
+								<small>ENI Fianarantsoa · Obtenu le 11 novembre 2026</small>
+							</span>
+						</div>
 					</div>
 					<div className='hero-portrait'>
-						<div className='portrait-frame'>
-							<span className='portrait-label'>MICHEL PRINCY / PORTFOLIO</span>
-							<div className='portrait-circle' />
+						<div className='portrait-frame portrait-cutout'>
 							<img
 								src={asset('images/michel-princy-hero.png')}
 								alt='Michel Princy en veste bleu ciel, avec un ordinateur portable'
@@ -421,21 +428,6 @@ function App() {
 								height='1281'
 								fetchPriority='high'
 							/>
-							<span
-								className='portrait-monogram'
-								aria-hidden='true'
-							>
-								MP
-							</span>
-						</div>
-						<div className='degree-note'>
-							<span className='degree-icon'>
-								<FiCheck />
-							</span>
-							<span>
-								<strong>Master professionnel en Informatique</strong>
-								<small>ENI Fianarantsoa · Obtenu le 11 novembre 2026</small>
-							</span>
 						</div>
 					</div>
 				</section>

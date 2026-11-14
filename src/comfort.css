@@ -642,30 +642,74 @@ body {
 	}
 }
 
-/* Sky-blue portrait and the complete project collection. */
-.hero .portrait-frame {
-	aspect-ratio: 0.95;
-	background: radial-gradient(ellipse at 65% 30%, #eaf7ff, #b8dff9);
+/* The transparent portrait shares the hero background. */
+.hero {
+	grid-template-columns: 1.1fr 1fr;
+	gap: 24px;
+	padding-block: 42px 0;
 }
-[data-theme='dark'] .hero .portrait-frame {
-	background: radial-gradient(ellipse at 65% 30%, #254c6b, #142b40);
+.hero-copy {
+	position: relative;
+	z-index: 2;
+	padding-bottom: 38px;
+}
+.hero .portrait-cutout,
+[data-theme='dark'] .hero .portrait-cutout {
+	aspect-ratio: auto;
+	background: none;
+	border: 0;
+	border-radius: 0;
+	overflow: visible;
+	isolation: auto;
 }
 .hero .portrait-frame > img {
+	position: static;
 	width: 100%;
-	height: 96%;
+	height: auto;
 	object-fit: contain;
 	object-position: center bottom;
 	mix-blend-mode: normal;
 }
-.portrait-label {
-	max-width: 38%;
-	line-height: 1.8;
-}
 .hero-portrait {
-	padding-bottom: 34px;
+	align-self: end;
+	width: calc(100% + 40px);
+	margin-left: -12px;
+	padding-bottom: 0;
 }
-.degree-note {
-	bottom: -2px;
+.has-motion .hero-portrait {
+	transform: none;
+}
+.hero-copy .degree-note {
+	position: static;
+	margin-top: 27px;
+	padding: 17px 0 0;
+	border: 0;
+	border-top: 1px solid var(--line);
+	border-radius: 0;
+	background: none;
+	box-shadow: none;
+	transform: none;
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+	.hero-portrait {
+		width: calc(100% + 16px);
+		margin-left: -8px;
+	}
+}
+@media (max-width: 999px) {
+	.hero {
+		grid-template-columns: 1fr;
+		gap: 24px;
+		padding-block: 40px 0;
+	}
+	.hero-copy {
+		padding-bottom: 0;
+	}
+	.hero-portrait {
+		width: min(100%, 580px);
+		margin: 0;
+		justify-self: center;
+	}
 }
 .project-overview {
 	display: flex;
@@ -846,13 +890,12 @@ body {
 		padding: 24px;
 	}
 	.hero .portrait-frame {
-		aspect-ratio: 0.95;
+		aspect-ratio: auto;
 	}
 	.hero-portrait {
-		padding-bottom: 42px;
-	}
-	.degree-note {
-		bottom: 0;
+		width: min(calc(100% + 24px), 480px);
+		margin-inline: -12px;
+		padding-bottom: 0;
 	}
 	.summary-illustration {
 		padding: 22px;
