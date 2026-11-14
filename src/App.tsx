@@ -423,7 +423,7 @@ function App() {
 					<div className='hero-portrait'>
 						<div className='portrait-frame portrait-cutout'>
 							<img
-								src={asset('images/michel-princy-hero.png')}
+								src={asset('images/michel-princy-hero.webp')}
 								alt='Michel Princy en veste bleu ciel, avec un ordinateur portable'
 								width='1228'
 								height='1281'
