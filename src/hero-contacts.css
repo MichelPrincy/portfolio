@@ -1,7 +1,7 @@
 .thought-contact {
 	position: absolute;
-	top: 3%;
-	right: 0;
+	top: 18%;
+	right: 40px;
 	width: 154px;
 	padding: 16px 14px 18px;
 	border: 1px solid var(--line);
@@ -130,6 +130,7 @@
 @media (max-width: 1100px) {
 	.thought-contact {
 		width: 138px;
+		right: 20px;
 		padding: 14px 10px 16px;
 	}
 	.thought-contact nav {
@@ -139,6 +140,7 @@
 @media (max-width: 760px) {
 	.thought-contact {
 		width: 116px;
+		right: 0;
 		padding: 12px 8px;
 		border-radius: 28px;
 	}
@@ -165,11 +167,6 @@
 	}
 	.hero .portrait-cutout {
 		width: calc(100% - 12px);
-	}
-}
-@media (max-width: 360px) {
-	.hero .portrait-cutout {
-		width: calc(100% - 42px);
 	}
 }
 @media (prefers-reduced-motion: reduce) {

@@ -424,9 +424,9 @@ function App() {
 						<div className='portrait-frame portrait-cutout'>
 							<img
 								src={asset('images/michel-princy-hero.webp')}
-								alt='Michel Princy en veste bleu ciel, avec un ordinateur portable'
-								width='1228'
-								height='1281'
+								alt='Michel Princy avec son ordinateur, entouré de visuels de développement, d’automatisation et de support IT'
+								width='1024'
+								height='1536'
 								fetchPriority='high'
 							/>
 						</div>

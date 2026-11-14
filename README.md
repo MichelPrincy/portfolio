@@ -38,9 +38,15 @@ Les fenêtres de détail utilisent le dialogue natif du navigateur : navigation 
 
 Les onze réalisations sont visibles : quatre présentations immersives et sept cartes détaillées, accessibles directement depuis le lien « Voir les 7 autres réalisations ». Chaque projet dispose de son contexte, de son rôle, de ses fonctionnalités et de ses technologies dans une fenêtre de détail. Les informations ont été complétées à partir du CV fourni ; le projet de dépenses communales déjà présent est conservé.
 
-La palette bleu ciel s’accorde à la veste de la nouvelle photo. `public/images/michel-princy-hero.png` est une copie de l’image fournie, avec sa transparence intacte. Le portrait agrandi s’intègre directement au fond du site, sans cadre, fond coloré ni monogramme. La mention du Master accompagne le texte et ne recouvre pas la photo. Sur tablette et téléphone, le portrait apparaît sous le texte et s’adapte à la largeur disponible. L’affichage contient le portrait et l’ordinateur sans recadrage de l’image. Les couleurs clair/sombre utilisent les variables `--accent`, `--highlight`, `--paper`, `--surface` et `--muted` ; le favicon et la couleur du navigateur suivent aussi cette identité.
+La palette bleu ciel accompagne l’identité visuelle du site. `public/images/michel-princy-hero.webp` est l’image fournie (1 024 × 1 536 px), avec sa transparence et ses panneaux illustrés. L’image conserve ses proportions, avec une hauteur limitée à 720 px sur grand écran, sans cadre, fond ajouté ni recadrage. La mention du Master accompagne le texte et ne recouvre pas la photo. Sur tablette et téléphone, le portrait apparaît sous le texte et s’adapte à la largeur disponible. Les couleurs clair/sombre utilisent les variables `--accent`, `--highlight`, `--paper`, `--surface` et `--muted` ; le favicon et la couleur du navigateur suivent aussi cette identité.
 
 La bulle « On échange ? » flotte à droite de la tête et regroupe quatre liens de contact, définis dans `profile` : Facebook, LinkedIn, e-mail et WhatsApp. Les liens externes s’ouvrent dans un nouvel onglet ; l’e-mail utilise `mailto:`. Les zones cliquables font 44 × 44 px, avec noms accessibles et libellés au survol ou au focus. Le flottement se met en pause pendant l’interaction et s’arrête en mode animations réduites. La bulle est masquée à l’impression et son placement s’adapte aux petits écrans.
+
+## Exploration et sitemap
+
+`public/robots.txt` autorise l’exploration et indique l’adresse du sitemap. `public/sitemap.xml` déclare l’URL canonique `https://portfolio-michel-princy.vercel.app/`. Le site comporte une seule page ; ses ancres de navigation ne sont pas des pages distinctes dans le sitemap. Vite copie ces fichiers dans `dist/` à la compilation.
+
+Après déploiement, vérifier les réponses HTTP 200 et les contenus des URL publiques `/robots.txt` et `/sitemap.xml`. Dans Google Search Console, sélectionner la propriété du portfolio puis **Indexation → Sitemaps**, saisir `sitemap.xml` et soumettre. Le sitemap aide à la découverte du site ; il ne garantit pas son indexation.
 
 ## Défilement immersif
 
