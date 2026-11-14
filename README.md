@@ -1,35 +1,32 @@
-# Portfolio
+# Portfolio de Michel Princy
 
-## Building Blocks
+Portfolio professionnel en français avec React, TypeScript et Vite. Développement logiciel, automatisation, intégration IA, support informatique, réalisations et parcours professionnel.
 
-- [`React`](https://react.dev) (with [`Vite`](https://vitejs.dev))
-- [`Typescript`](https://www.typescriptlang.org/)
-- Package Manager: [`pnpm`](https://pnpm.io)
+## Démarrer
 
----
-
-## Scripts
-
-#### Start the development server:
-
-```bash
-pnpm dev
+```sh
+npm ci
+npm run dev
 ```
 
-#### Start the production server:
+## Compiler et vérifier
 
-```bash
-pnpm start
+```sh
+npm run build
+npm run preview
 ```
 
-#### Build For Production:
+Le build vérifie TypeScript et génère `dist/`. Ce dossier est publiable sur un hébergement statique. Les chemins relatifs permettent une publication à la racine ou dans un sous-dossier, notamment GitHub Pages. Les contacts utilisent e-mail, WhatsApp, GitHub et LinkedIn ; aucun secret ni service de formulaires n’est nécessaire.
 
-```bash
-pnpm build
-```
+## Modifier le portfolio
 
-#### Preview Production Build:
+- `src/content.ts` : profil, expertises, quatre projets sélectionnés, sept autres réalisations et cinq expériences professionnelles.
+- `src/App.tsx` : sections, menu mobile, détails des projets et copie de l’adresse e-mail.
+- `src/index.css` : design responsive, impression et réduction des animations.
+- `public/documents/CV_Michel_Princy.pdf` : CV téléchargeable.
+- `public/images/` : portrait et captures.
+- `index.html` : référencement et données structurées.
 
-```bash
-pnpm preview
-```
+Le Master est indiqué comme obtenu le **11 novembre 2026**. LUDO Mazika est un projet personnel en bêta. Les visuels VINA et IFEM Hub sont des illustrations de fonctionnalités, pas des captures d’applications. Les captures de RAKOTO Player utilisent des données de démonstration ; celle de LUDO Mazika vient de sa bêta.
+
+Les fenêtres de détail utilisent le dialogue natif du navigateur : navigation au clavier, fermeture avec Échap et retour du focus. Le site respecte `prefers-reduced-motion`, conserve le curseur standard et inclut un lien d’accès rapide au contenu.
