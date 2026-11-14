@@ -35,6 +35,7 @@ import {
 import type { Project } from './content';
 import { ScrollExperience } from './ScrollExperience';
 import { ThemeToggle } from './Appearance';
+import { HeroContacts } from './HeroContacts';
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 const cvUrl = asset('documents/CV_Michel_Princy.pdf');
@@ -429,6 +430,7 @@ function App() {
 								fetchPriority='high'
 							/>
 						</div>
+						<HeroContacts />
 					</div>
 				</section>
 				<div className='current-role container'>

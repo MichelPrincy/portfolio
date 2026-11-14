@@ -18,6 +18,7 @@ export const profile = {
 	email: 'micheleprincy2709@gmail.com',
 	phone: '+261 38 29 946 93',
 	github: 'https://github.com/MichelPrincy',
+	facebook: 'https://www.facebook.com/profile.php?id=61596370403565',
 	linkedin: 'https://www.linkedin.com/in/princy-rakotozafimalala-ba1022327/',
 	whatsapp: 'https://wa.me/261382994693',
 };

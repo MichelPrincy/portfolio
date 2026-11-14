@@ -25,6 +25,7 @@ Le build vérifie TypeScript et génère `dist/`. Ce dossier est publiable sur u
 - `src/index.css` : design responsive, impression et réduction des animations.
 - `src/ScrollExperience.tsx` et `src/immersion.css` : progression de lecture, repères de navigation, apparitions et présentation immersive des projets.
 - `src/Appearance.tsx` et `src/comfort.css` : thèmes clair/sombre, tailles de lecture, décors et réactions à la souris.
+- `src/HeroContacts.tsx` et `src/hero-contacts.css` : bulle de pensée près du portrait, avec accès Facebook, LinkedIn, e-mail et WhatsApp.
 - `public/documents/CV_Michel_Princy.pdf` : CV téléchargeable.
 - `public/images/` : portrait et captures.
 - `index.html` : référencement et données structurées.
@@ -38,6 +39,8 @@ Les fenêtres de détail utilisent le dialogue natif du navigateur : navigation 
 Les onze réalisations sont visibles : quatre présentations immersives et sept cartes détaillées, accessibles directement depuis le lien « Voir les 7 autres réalisations ». Chaque projet dispose de son contexte, de son rôle, de ses fonctionnalités et de ses technologies dans une fenêtre de détail. Les informations ont été complétées à partir du CV fourni ; le projet de dépenses communales déjà présent est conservé.
 
 La palette bleu ciel s’accorde à la veste de la nouvelle photo. `public/images/michel-princy-hero.png` est une copie de l’image fournie, avec sa transparence intacte. Le portrait agrandi s’intègre directement au fond du site, sans cadre, fond coloré ni monogramme. La mention du Master accompagne le texte et ne recouvre pas la photo. Sur tablette et téléphone, le portrait apparaît sous le texte et s’adapte à la largeur disponible. L’affichage contient le portrait et l’ordinateur sans recadrage de l’image. Les couleurs clair/sombre utilisent les variables `--accent`, `--highlight`, `--paper`, `--surface` et `--muted` ; le favicon et la couleur du navigateur suivent aussi cette identité.
+
+La bulle « On échange ? » flotte à droite de la tête et regroupe quatre liens de contact, définis dans `profile` : Facebook, LinkedIn, e-mail et WhatsApp. Les liens externes s’ouvrent dans un nouvel onglet ; l’e-mail utilise `mailto:`. Les zones cliquables font 44 × 44 px, avec noms accessibles et libellés au survol ou au focus. Le flottement se met en pause pendant l’interaction et s’arrête en mode animations réduites. La bulle est masquée à l’impression et son placement s’adapte aux petits écrans.
 
 ## Défilement immersif
 
