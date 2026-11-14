@@ -20,7 +20,7 @@ Le build vérifie TypeScript et génère `dist/`. Ce dossier est publiable sur u
 
 ## Modifier le portfolio
 
-- `src/content.ts` : profil, expertises, quatre projets sélectionnés, sept autres réalisations et cinq expériences professionnelles.
+- `src/content.ts` : profil, expertises, quatre projets sélectionnés, sept autres réalisations avec fiches détaillées et cinq expériences professionnelles.
 - `src/App.tsx` : sections, menu mobile, détails des projets et copie de l’adresse e-mail.
 - `src/index.css` : design responsive, impression et réduction des animations.
 - `src/ScrollExperience.tsx` et `src/immersion.css` : progression de lecture, repères de navigation, apparitions et présentation immersive des projets.
@@ -32,6 +32,12 @@ Le build vérifie TypeScript et génère `dist/`. Ce dossier est publiable sur u
 Le Master est indiqué comme obtenu le **11 novembre 2026**. LUDO Mazika est un projet personnel en bêta. Les visuels VINA et IFEM Hub sont des illustrations de fonctionnalités, pas des captures d’applications. Les captures de RAKOTO Player utilisent des données de démonstration ; celle de LUDO Mazika vient de sa bêta.
 
 Les fenêtres de détail utilisent le dialogue natif du navigateur : navigation au clavier, fermeture avec Échap et retour du focus. Le site respecte `prefers-reduced-motion`, conserve le curseur standard et inclut un lien d’accès rapide au contenu.
+
+## Projets et identité visuelle
+
+Les onze réalisations sont visibles : quatre présentations immersives et sept cartes détaillées, accessibles directement depuis le lien « Voir les 7 autres réalisations ». Chaque projet dispose de son contexte, de son rôle, de ses fonctionnalités et de ses technologies dans une fenêtre de détail. Les informations ont été complétées à partir du CV fourni ; le projet de dépenses communales déjà présent est conservé.
+
+La palette bleu ciel s’accorde à la veste de la nouvelle photo. `public/images/michel-princy-hero.png` est une copie de l’image fournie, avec sa transparence intacte. L’affichage contient le portrait et l’ordinateur sans recadrage de l’image. Les couleurs clair/sombre utilisent les variables `--accent`, `--highlight`, `--paper`, `--surface` et `--muted` ; le favicon et la couleur du navigateur suivent aussi cette identité.
 
 ## Défilement immersif
 

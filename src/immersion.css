@@ -7,7 +7,7 @@
 	inset: 0 0 auto;
 	height: 3px;
 	z-index: 30;
-	background: var(--green);
+	background: var(--accent);
 	transform-origin: left;
 	transform: scaleX(var(--reading-progress));
 	pointer-events: none;
@@ -30,13 +30,13 @@
 	position: relative;
 	min-width: 28px;
 	min-height: 24px;
-	color: #798574;
+	color: #667f93;
 }
 .chapter-nav i {
 	display: block;
 	width: 5px;
 	height: 5px;
-	border: 1px solid #83917d;
+	border: 1px solid #718a9d;
 	border-radius: 50%;
 	transition:
 		background 0.3s,
@@ -65,13 +65,13 @@
 	border-radius: 4px;
 }
 .chapter-nav a[aria-current] i {
-	background: var(--green);
-	border-color: var(--green);
+	background: var(--accent);
+	border-color: var(--accent);
 	transform: scale(1.5);
 }
 .chapter-nav a[aria-current] .chapter-number {
 	opacity: 1;
-	color: var(--green);
+	color: var(--accent);
 }
 .chapter-nav a:hover .chapter-name,
 .chapter-nav a:focus-visible .chapter-name {
@@ -83,8 +83,8 @@
 	bottom: 16px;
 	right: 18px;
 	z-index: 16;
-	border: 1px solid #cbd6c4;
-	background: #f7f8f3f5;
+	border: 1px solid #c2ced8;
+	background: #f4f9fdf5;
 	backdrop-filter: blur(10px);
 	padding: 9px 12px;
 	border-radius: 30px;
@@ -92,11 +92,11 @@
 	align-items: center;
 	gap: 7px;
 	font-size: 10px;
-	color: var(--green);
-	box-shadow: 0 3px 12px #183b2510;
+	color: var(--accent);
+	box-shadow: 0 3px 12px #142c3f10;
 }
 .motion-toggle:hover {
-	background: var(--lime);
+	background: var(--highlight);
 }
 .motion-toggle:disabled {
 	cursor: default;
@@ -162,13 +162,13 @@ html:has(.motion-reduced) {
 		width: max-content;
 		max-width: 100%;
 		padding: 7px;
-		background: #f7f8f3ed;
-		border: 1px solid #d1dbc9;
+		background: #f4f9fded;
+		border: 1px solid #c7d3dd;
 		backdrop-filter: blur(12px);
 		border-radius: 40px;
 		z-index: 10;
 		margin: 0 auto 30px;
-		box-shadow: 0 5px 18px #193b1d08;
+		box-shadow: 0 5px 18px #152d3f08;
 	}
 	.project-sequence > a {
 		display: flex;
@@ -188,7 +188,7 @@ html:has(.motion-reduced) {
 		font-variant-numeric: tabular-nums;
 	}
 	.project-sequence > a[aria-current] {
-		background: var(--green);
+		background: var(--accent);
 		color: white;
 	}
 	.has-motion .project-grid {
@@ -230,7 +230,7 @@ html:has(.motion-reduced) {
 		grid-template-columns: 1.07fr 1fr;
 		min-height: 430px;
 		overflow: hidden;
-		box-shadow: 0 8px 25px #1f402312;
+		box-shadow: 0 8px 25px #1b324412;
 		transform: translate3d(0, calc(var(--stack-depth, 0) * -15px), 0)
 			scale(calc(1 - var(--stack-depth, 0) * 0.035));
 		transform-origin: center top;
@@ -278,7 +278,7 @@ html:has(.motion-reduced) {
 		right: 22px;
 		font-size: 11px;
 		letter-spacing: 0.08em;
-		color: #82907b;
+		color: #70889b;
 		pointer-events: none;
 	}
 	.has-motion .visual-vina {
@@ -297,7 +297,7 @@ html:has(.motion-reduced) {
 		margin-top: 15px;
 		position: relative;
 		z-index: 11;
-		background: #edf0e8;
+		background: #eaf3fa;
 	}
 }
 @media (max-width: 999px) {

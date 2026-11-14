@@ -4,6 +4,12 @@ import {
 	FiArrowUpRight,
 	FiCheck,
 	FiCode,
+	FiGlobe,
+	FiMap,
+	FiServer,
+	FiType,
+	FiWifi,
+	FiDollarSign,
 	FiCopy,
 	FiDatabase,
 	FiDownload,
@@ -14,7 +20,6 @@ import {
 	FiMapPin,
 	FiMenu,
 	FiMonitor,
-	FiPlus,
 	FiX,
 	FiZap,
 } from 'react-icons/fi';
@@ -45,6 +50,16 @@ const icons = {
 	support: FiMonitor,
 	database: FiDatabase,
 };
+const projectIcons = {
+	cybercafe: FiWifi,
+	docker: FiServer,
+	webmail: FiMail,
+	cadastre: FiMap,
+	ashna: FiGlobe,
+	communes: FiDollarSign,
+	saisie: FiType,
+};
+const projectCount = selectedProjects.length + otherProjects.length;
 
 function ProjectVisual({ project }: { project: Project }) {
 	if (project.image)
@@ -112,6 +127,23 @@ function ProjectVisual({ project }: { project: Project }) {
 				<span className='visual-caption'>Illustration des fonctionnalités</span>
 			</div>
 		);
+	if (project.id !== 'ifem') {
+		const Icon =
+			projectIcons[project.id as keyof typeof projectIcons] ?? FiCode;
+		return (
+			<div className='project-visual visual-summary'>
+				<div
+					className='summary-illustration'
+					aria-hidden='true'
+				>
+					<Icon />
+					<strong>{project.title}</strong>
+					<span>{project.technologies.join(' · ')}</span>
+				</div>
+				<span className='visual-caption'>Présentation du projet</span>
+			</div>
+		);
+	}
 	return (
 		<div className='project-visual visual-ifem'>
 			<div
@@ -383,10 +415,10 @@ function App() {
 							<span className='portrait-label'>MICHEL PRINCY / PORTFOLIO</span>
 							<div className='portrait-circle' />
 							<img
-								src={asset('images/michel-princy.jpg')}
-								alt='Portrait de Michel Princy'
-								width='426'
-								height='389'
+								src={asset('images/michel-princy-hero.png')}
+								alt='Michel Princy en veste bleu ciel, avec un ordinateur portable'
+								width='1228'
+								height='1281'
 								fetchPriority='high'
 							/>
 							<span
@@ -478,95 +510,141 @@ function App() {
 									Des outils qui y répondent.
 								</h2>
 								<p>
-									Une sélection de projets métier et personnels, du web au
-									mobile.
+									{projectCount} réalisations métier, personnelles et
+									académiques : du web au mobile, du logiciel à
+									l’infrastructure.
 								</p>
 							</div>
 							<span className='section-count'>2023 — 2026</span>
 						</div>
-						<nav
-							className='project-sequence'
-							aria-label='Les projets sélectionnés'
-						>
-							{selectedProjects.map((project, index) => (
-								<a
-									href={`#projet-${project.id}`}
-									key={project.id}
-								>
-									<span>0{index + 1}</span>
-									<span>{project.title}</span>
-								</a>
-							))}
-						</nav>
-						<div className='project-grid'>
-							{selectedProjects.map((project, index) => (
-								<Fragment key={project.id}>
-									<span
-										className='project-anchor'
-										id={`projet-${project.id}`}
-										aria-hidden='true'
-									/>
-									<div className='project-scene'>
-										<article className='project-card'>
-											<ProjectVisual project={project} />
-											<div className='project-card-copy'>
-												<div className='project-kicker'>
-													<span>{project.category}</span>
-													<span>{project.year}</span>
-												</div>
-												<h3>{project.title}</h3>
-												<p>{project.description}</p>
-												<div className='project-card-bottom'>
-													<div className='project-tech'>
-														{project.technologies.slice(0, 3).join(' / ')}
-													</div>
-													<button
-														type='button'
-														className='project-open'
-														onClick={() => setActiveProject(project)}
-														aria-label={`Découvrir le projet ${project.title}`}
-													>
-														<FiArrowUpRight />
-													</button>
-												</div>
-											</div>
-										</article>
-										<span
-											className='project-scene-counter'
-											aria-hidden='true'
-										>
-											0{index + 1} / 04
-										</span>
-									</div>
-								</Fragment>
-							))}
+						<div className='project-overview'>
+							<span>
+								<strong>{projectCount} projets</strong> · 2023 — 2026
+							</span>
+							<a
+								className='text-link'
+								href='#autres-projets'
+							>
+								Voir les {otherProjects.length} autres réalisations{' '}
+								<FiArrowDown aria-hidden='true' />
+							</a>
 						</div>
-						<div className='more-projects'>
-							<div>
-								<p className='eyebrow'>LE RESTE DU PARCOURS</p>
-								<h3>D’autres problèmes résolus.</h3>
+						<div className='project-showcase'>
+							<nav
+								className='project-sequence'
+								aria-label='Les projets sélectionnés'
+							>
+								{selectedProjects.map((project, index) => (
+									<a
+										href={`#projet-${project.id}`}
+										key={project.id}
+									>
+										<span>0{index + 1}</span>
+										<span>{project.title}</span>
+									</a>
+								))}
+							</nav>
+							<div className='project-grid'>
+								{selectedProjects.map((project, index) => (
+									<Fragment key={project.id}>
+										<span
+											className='project-anchor'
+											id={`projet-${project.id}`}
+											aria-hidden='true'
+										/>
+										<div className='project-scene'>
+											<article className='project-card'>
+												<ProjectVisual project={project} />
+												<div className='project-card-copy'>
+													<div className='project-kicker'>
+														<span>{project.category}</span>
+														<span>{project.year}</span>
+													</div>
+													<h3>{project.title}</h3>
+													<p>{project.description}</p>
+													<div className='project-card-bottom'>
+														<div className='project-tech'>
+															{project.technologies.slice(0, 3).join(' / ')}
+														</div>
+														<button
+															type='button'
+															className='project-open'
+															onClick={() => setActiveProject(project)}
+															aria-label={`Découvrir le projet ${project.title}`}
+														>
+															<FiArrowUpRight />
+														</button>
+													</div>
+												</div>
+											</article>
+											<span
+												className='project-scene-counter'
+												aria-hidden='true'
+											>
+												0{index + 1} / 04
+											</span>
+										</div>
+									</Fragment>
+								))}
+							</div>
+						</div>
+						<div
+							className='project-collection'
+							id='autres-projets'
+							aria-labelledby='collection-title'
+						>
+							<div className='collection-heading'>
+								<div>
+									<p className='eyebrow'>POUR ALLER PLUS LOIN</p>
+									<h3 id='collection-title'>Mes autres réalisations.</h3>
+								</div>
 								<p>
-									Des réalisations professionnelles et académiques qui
-									complètent mon expérience.
+									Applications métier, infrastructure, communication et
+									développement web : découvrez le contexte, mon rôle et les
+									fonctionnalités de chaque projet.
 								</p>
 							</div>
-							<div className='project-disclosures'>
-								{otherProjects.map((project) => (
-									<details key={project.title}>
-										<summary>
-											<span>
-												{project.title}
-												<small>{project.date}</small>
-											</span>
-											<FiPlus aria-hidden='true' />
-										</summary>
-										<div className='disclosure-content'>
-											<p className='disclosure-context'>{project.context}</p>
-											<p>{project.description}</p>
-											<p className='disclosure-tech'>{project.technologies}</p>
-										</div>
-									</details>
-								))}
+							<div className='archive-grid'>
+								{otherProjects.map((project) => {
+									const Icon =
+										projectIcons[project.id as keyof typeof projectIcons] ??
+										FiCode;
+									return (
+										<article
+											className='archive-card'
+											key={project.id}
+										>
+											<div className='archive-card-top'>
+												<span
+													className='archive-icon'
+													aria-hidden='true'
+												>
+													<Icon />
+												</span>
+												<span>{project.year}</span>
+											</div>
+											<p className='archive-category'>{project.category}</p>
+											<h4>{project.title}</h4>
+											<p className='archive-context'>{project.context}</p>
+											<p className='archive-description'>
+												{project.description}
+											</p>
+											<div className='tags'>
+												{project.technologies.map((tech) => (
+													<span key={tech}>{tech}</span>
+												))}
+											</div>
+											<button
+												type='button'
+												className='archive-open'
+												onClick={() => setActiveProject(project)}
+												aria-label={`Découvrir le projet ${project.title}`}
+											>
+												Voir le projet <FiArrowUpRight aria-hidden='true' />
+											</button>
+										</article>
+									);
+								})}
 							</div>
 						</div>
 					</div>

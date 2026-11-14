@@ -50,7 +50,7 @@ export function ScrollExperience({ children }: { children: ReactNode }) {
 		];
 		const targets = [
 			...element.querySelectorAll<HTMLElement>(
-				'.section-heading, .expertise-item, .project-card-copy, .more-projects > div, .experience-list > li, .education-item, .contact-inner > div',
+				'.section-heading, .expertise-item, .project-card-copy, .archive-card, .collection-heading, .experience-list > li, .education-item, .contact-inner > div',
 			),
 		];
 		targets.forEach((target, index) => {
