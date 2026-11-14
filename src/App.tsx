@@ -29,6 +29,7 @@ import {
 } from './content';
 import type { Project } from './content';
 import { ScrollExperience } from './ScrollExperience';
+import { ThemeToggle } from './Appearance';
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 const cvUrl = asset('documents/CV_Michel_Princy.pdf');
@@ -280,16 +281,6 @@ function App() {
 							Michel Princy<small>Développement & solutions IT</small>
 						</span>
 					</a>
-					<button
-						type='button'
-						className='icon-button menu-toggle'
-						aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-						aria-expanded={menuOpen}
-						aria-controls='navigation'
-						onClick={() => setMenuOpen(!menuOpen)}
-					>
-						{menuOpen ? <FiX /> : <FiMenu />}
-					</button>
 					<nav
 						id='navigation'
 						aria-label='Navigation principale'
@@ -313,6 +304,19 @@ function App() {
 							Mon CV <FiDownload />
 						</a>
 					</nav>
+					<div className='header-controls'>
+						<ThemeToggle />
+						<button
+							type='button'
+							className='icon-button menu-toggle'
+							aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+							aria-expanded={menuOpen}
+							aria-controls='navigation'
+							onClick={() => setMenuOpen(!menuOpen)}
+						>
+							{menuOpen ? <FiX /> : <FiMenu />}
+						</button>
+					</div>
 				</div>
 			</header>
 			<main id='contenu'>

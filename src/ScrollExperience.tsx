@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { FiPause, FiPlay } from 'react-icons/fi';
+import { PointerOrnaments } from './Appearance';
 
 import './immersion.css';
+import './comfort.css';
 
 const chapters = [
 	{ id: 'accueil', label: 'Accueil' },
@@ -162,6 +164,7 @@ export function ScrollExperience({ children }: { children: ReactNode }) {
 			ref={root}
 			className={`immersive-root ${reduced ? 'motion-reduced' : 'has-motion'}`}
 		>
+			<PointerOrnaments reduced={reduced} />
 			<div
 				className='reading-progress'
 				aria-hidden='true'

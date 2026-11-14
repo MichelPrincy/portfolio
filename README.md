@@ -24,6 +24,7 @@ Le build vérifie TypeScript et génère `dist/`. Ce dossier est publiable sur u
 - `src/App.tsx` : sections, menu mobile, détails des projets et copie de l’adresse e-mail.
 - `src/index.css` : design responsive, impression et réduction des animations.
 - `src/ScrollExperience.tsx` et `src/immersion.css` : progression de lecture, repères de navigation, apparitions et présentation immersive des projets.
+- `src/Appearance.tsx` et `src/comfort.css` : thèmes clair/sombre, tailles de lecture, décors et réactions à la souris.
 - `public/documents/CV_Michel_Princy.pdf` : CV téléchargeable.
 - `public/images/` : portrait et captures.
 - `index.html` : référencement et données structurées.
@@ -39,3 +40,9 @@ Sur ordinateur (au moins 1 000 × 680 px), les quatre projets principaux se supe
 Le défilement reste natif : aucun blocage de la molette, aucune bibliothèque d’animation supplémentaire. Les mises à jour sont regroupées dans `requestAnimationFrame`, déclenchées seulement lors du défilement ou d’un redimensionnement. Les révélations utilisent `IntersectionObserver` et ne se rejouent pas à chaque passage. Sur mobile, les cartes restent dans le flux normal et les mouvements sont allégés.
 
 Le bouton « Réduire les effets » mémorise la préférence sur l’appareil. La préférence système `prefers-reduced-motion` est prioritaire et conserve une présentation statique et complète. L’impression montre aussi tout le contenu.
+
+## Lisibilité et interactions
+
+Le bouton lune/soleil de l’en-tête change le thème. Au premier passage, le thème suit le système ; un choix manuel est mémorisé dans `localStorage`. Un petit script dans `index.html` applique le thème avant l’affichage pour éviter un éclair clair lors du chargement en mode sombre. Les textes principaux font de 15 à 18 px, avec des interlignes aérés. Sur téléphone, les compétences passent en une colonne ; le menu compact est disponible aussi sur tablette.
+
+Des pictogrammes ordinateur, document, mallette, horloge, code et étoiles animent les marges. Sur un appareil avec souris, ils accompagnent légèrement le pointeur ; une courte traînée utilise huit emplacements réutilisables, et les illustrations réagissent aux mouvements. Le curseur reste standard. Les décors sont masqués aux lecteurs d’écran et ne capturent aucun clic. Les effets suivent le bouton de réduction des animations et la préférence système. Les événements de pointeur sont regroupés par image, sans boucle JavaScript permanente, et les effets sont suspendus quand l’onglet est masqué.
