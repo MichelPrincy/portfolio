@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import {
 	FiArrowDown,
 	FiArrowUpRight,
@@ -28,6 +28,7 @@ import {
 	selectedProjects,
 } from './content';
 import type { Project } from './content';
+import { ScrollExperience } from './ScrollExperience';
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 const cvUrl = asset('documents/CV_Michel_Princy.pdf');
@@ -258,7 +259,7 @@ function App() {
 		copyTimer.current = setTimeout(() => setCopyStatus(''), 5000);
 	};
 	return (
-		<>
+		<ScrollExperience>
 			<a
 				className='skip-link'
 				href='#contenu'
@@ -479,35 +480,61 @@ function App() {
 							</div>
 							<span className='section-count'>2023 — 2026</span>
 						</div>
-						<div className='project-grid'>
-							{selectedProjects.map((project) => (
-								<article
-									className='project-card'
+						<nav
+							className='project-sequence'
+							aria-label='Les projets sélectionnés'
+						>
+							{selectedProjects.map((project, index) => (
+								<a
+									href={`#projet-${project.id}`}
 									key={project.id}
 								>
-									<ProjectVisual project={project} />
-									<div className='project-card-copy'>
-										<div className='project-kicker'>
-											<span>{project.category}</span>
-											<span>{project.year}</span>
-										</div>
-										<h3>{project.title}</h3>
-										<p>{project.description}</p>
-										<div className='project-card-bottom'>
-											<div className='project-tech'>
-												{project.technologies.slice(0, 3).join(' / ')}
+									<span>0{index + 1}</span>
+									<span>{project.title}</span>
+								</a>
+							))}
+						</nav>
+						<div className='project-grid'>
+							{selectedProjects.map((project, index) => (
+								<Fragment key={project.id}>
+									<span
+										className='project-anchor'
+										id={`projet-${project.id}`}
+										aria-hidden='true'
+									/>
+									<div className='project-scene'>
+										<article className='project-card'>
+											<ProjectVisual project={project} />
+											<div className='project-card-copy'>
+												<div className='project-kicker'>
+													<span>{project.category}</span>
+													<span>{project.year}</span>
+												</div>
+												<h3>{project.title}</h3>
+												<p>{project.description}</p>
+												<div className='project-card-bottom'>
+													<div className='project-tech'>
+														{project.technologies.slice(0, 3).join(' / ')}
+													</div>
+													<button
+														type='button'
+														className='project-open'
+														onClick={() => setActiveProject(project)}
+														aria-label={`Découvrir le projet ${project.title}`}
+													>
+														<FiArrowUpRight />
+													</button>
+												</div>
 											</div>
-											<button
-												type='button'
-												className='project-open'
-												onClick={() => setActiveProject(project)}
-												aria-label={`Découvrir le projet ${project.title}`}
-											>
-												<FiArrowUpRight />
-											</button>
-										</div>
+										</article>
+										<span
+											className='project-scene-counter'
+											aria-hidden='true'
+										>
+											0{index + 1} / 04
+										</span>
 									</div>
-								</article>
+								</Fragment>
 							))}
 						</div>
 						<div className='more-projects'>
@@ -730,7 +757,7 @@ function App() {
 				project={activeProject}
 				onClose={() => setActiveProject(null)}
 			/>
-		</>
+		</ScrollExperience>
 	);
 }
 export default App;
